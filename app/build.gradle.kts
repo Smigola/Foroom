@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.splashscreen)
     implementation(libs.androidx.espresso.contrib)
     implementation(libs.firebase.crashlytics.buildtools)
+    implementation(libs.datafaker)
     coreLibraryDesugaring(libs.android.desugaring)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
