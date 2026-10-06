@@ -25,8 +25,10 @@ datastore = "1.1.1"
 splashscreen = "1.0.1"
 espressoContrib = "3.6.1"
 firebaseCrashlyticsBuildtools = "3.0.4"
+datafaker = "1.8.0"
 
 [libraries]
+datafaker = { group = "net.datafaker", name = "datafaker", version.ref = "datafaker" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
