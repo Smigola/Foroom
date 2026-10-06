@@ -1,16 +1,24 @@
 package com.example.foroom.constants
 
+import com.example.foroom.util.util
 import net.datafaker.Faker
+import java.time.LocalTime
 
 
 class Constants {
     companion object {
         val faker = Faker()
-        val USERNAME = faker.name().username()
-        val PASSWORD = faker.internet().password()
-        val INVALID_PASSWORD = faker.internet().password()
-        val INVALID_USERNAME = faker.name().username()
-        val PASSWORD_ERROR_MESSAGE = "Incorrect password"
-        val USER_ERROR_MESSAGE = "Username does not exist"
+        var USERNAME: String = util().generateUsername()
+            private set
+        var PASSWORD = faker.internet().password()
+        val NEW_PASSWORD = faker.internet().password()
+        val CHAT_TITLE = "Bachana Kokoshvili " + LocalTime.now()
+        val LANG_LABEL = mapOf("GE" to "ენის შეცვლა",
+            "EN" to "Change Language")
+
+        fun generateNewTestData() {
+            USERNAME = util().generateUsername()
+        }
     }
+
 }

@@ -3,13 +3,17 @@ package com.example.foroom.pages
 import androidx.test.espresso.matcher.ViewMatchers.isDescendantOfA
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.alternator.foroom.R
-import org.hamcrest.Matchers.allOf
 import com.example.design_system.R as designSystem
+import org.hamcrest.Matchers.allOf
 
-class HomePage {
-    val navbar = allOf(withId(R.id.navBar))
+open class HomePage {
+    val navbar = withId(R.id.navBar)
+    val homeNavigationCreateChat = allOf(withId(R.id.homeNavigationCreateChat),
+        isDescendantOfA(navbar))
     val profile = allOf(withId(R.id.homeNavigationProfile),
         isDescendantOfA(navbar))
-    val signOutButton = allOf(withId(designSystem.id.listItemTextView),
-        isDescendantOfA(withId(R.id.signOutItem)))
+    val searchChatInput = allOf(withId(designSystem.id.inputEditText),
+        isDescendantOfA(withId(R.id.searchChatInput)))
+    val chatTitleText = allOf(withId(designSystem.id.chatTitleTextView),
+        isDescendantOfA(withId(R.id.chatsRecyclerView)))
 }
