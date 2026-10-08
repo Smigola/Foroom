@@ -10,8 +10,7 @@ import com.example.design_system.R as designSystem
 
 class RegistrationPage: CommonPage() {
     val repeatPasswordInput = allOf(withId(designSystem.id.inputEditText),
-        isDescendantOfA(withId(R.id.repeatPasswordInput)));
-
+        isDescendantOfA(withId(R.id.repeatPasswordInput)))
     val avatarList = withId(R.id.listView)
 
 

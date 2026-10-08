@@ -16,4 +16,6 @@ open class HomePage {
         isDescendantOfA(withId(R.id.searchChatInput)))
     val chatTitleText = allOf(withId(designSystem.id.chatTitleTextView),
         isDescendantOfA(withId(R.id.chatsRecyclerView)))
+    val openChatButton = allOf(withId(R.id.sendMessageButton),
+        isDescendantOfA(withId(R.id.chatsRecyclerView)))
 }

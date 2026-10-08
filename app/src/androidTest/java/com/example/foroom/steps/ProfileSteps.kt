@@ -7,10 +7,11 @@ import com.example.foroom.pages.ProfilePage
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
 
-class ProfileSteps {
+class ProfileSteps: HomeSteps() {
     val profilePage = ProfilePage()
 
     fun logout(): ProfileSteps {
+        super.openProfile()
         onView(profilePage.profile)
             .perform().tap()
 

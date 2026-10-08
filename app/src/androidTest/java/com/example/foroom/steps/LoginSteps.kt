@@ -27,4 +27,17 @@ class LoginSteps: CommonSteps() {
         return this
     }
 
+    fun login(username: String, password: String) {
+        this
+            .fillUserName(username)
+            .fillPassword(password)
+        this.loginAttempt()
+    }
+
+    fun checkUserExists(): Boolean {
+        if (loginPage.userNameNotExsistsError.isViewDisplayed()){
+            return false
+        }
+        return true
+    }
 }

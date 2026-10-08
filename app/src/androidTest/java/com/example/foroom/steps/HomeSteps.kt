@@ -5,12 +5,11 @@ import androidx.test.espresso.action.ViewActions.typeText
 import com.example.foroom.Helper.getText
 import com.example.foroom.Helper.isViewDisplayed
 import com.example.foroom.Helper.tap
-import com.example.foroom.constants.Constants.Companion.CHAT_TITLE
 import com.example.foroom.pages.HomePage
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
 
-class HomeSteps {
+open class HomeSteps {
     val homepage = HomePage()
 
     fun checkLogged(): Boolean {
@@ -35,11 +34,10 @@ class HomeSteps {
         return this
     }
 
-    fun validateSearchedChat(chatTitle: String): HomeSteps {
-        assertThat(homepage.chatTitleText.getText(),
-            equalTo(chatTitle))
-
+    fun openChat(): HomeSteps {
+        onView(homepage.openChatButton).tap()
         return this
     }
+
 
 }
