@@ -1,5 +1,6 @@
 package com.example.foroom.constants
 
+import java.io.File
 import java.time.LocalDateTime
 
 
@@ -17,6 +18,8 @@ class Constants {
         val CHAT_MESSAGE_QUESTION = "which module do u like the most in TA academy?" + LocalDateTime.now()
         val CHAT_MESSAGE_GREETING = "wazuuuuuuuuup" + LocalDateTime.now()
         val CHAT_MESSAGE_POLITE_GREETING = "Hello"
+        val USER_LOGS = File("/data/data/com.alternator.foroom.training/shared_prefs/foroom_training.xml")
+
     }
 
 }

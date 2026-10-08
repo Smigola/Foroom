@@ -12,6 +12,7 @@ import com.example.foroom.constants.Constants.Companion.CHAT_TITLE_UNIQUE
 import com.example.foroom.constants.Constants.Companion.PASSWORD
 import com.example.foroom.constants.Constants.Companion.USER_A
 import com.example.foroom.constants.Constants.Companion.USER_B
+import com.example.foroom.constants.Constants.Companion.USER_LOGS
 import com.example.foroom.presentation.ui.activity.ForoomActivity
 import com.example.foroom.steps.ChatSteps
 import com.example.foroom.steps.CreateChatSteps
@@ -51,7 +52,9 @@ class ChatsTests {
         chatSteps = ChatSteps()
         createChatSteps = CreateChatSteps()
 
-        prepareLocalTestData()
+        if (!USER_LOGS.exists() || !USER_LOGS.readText().contains("userA")) {
+            prepareLocalTestData()
+        }
 
     }
 
